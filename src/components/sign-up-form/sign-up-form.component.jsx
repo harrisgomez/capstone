@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import FormInput from "../form-input/form-input.component";
+
 import {
     createAuthUserWithEmailAndPassword,
     createUserDocFromAuth
@@ -47,14 +49,38 @@ const SignUpForm = () => {
         <div>
             <h1>Sign up with your email and password</h1>
             <form onSubmit={handleSubmit}>
-                <label>Display Name</label>
-                <input type='text' name='displayName' onChange={handleChange} value={displayName} required />
-                <label>Email</label>
-                <input type='email' name='email' onChange={handleChange} value={email} required />
-                <label>Password</label>
-                <input type='password' name='password' onChange={handleChange} rvalue={password} equired />
-                <label>Confirm Password</label>
-                <input type='password' name='confirmPassword' onChange={handleChange} value={confirmPassword} required />
+                <FormInput
+                    label='Display Name'
+                    type='text'
+                    name='displayName'
+                    onChange={handleChange}
+                    value={displayName}
+                    required
+                />
+                <FormInput
+                    label='Email'
+                    type='email'
+                    name='email'
+                    onChange={handleChange}
+                    value={email}
+                    required
+                />
+                <FormInput
+                    label='Password'
+                    type='password'
+                    name='password'
+                    onChange={handleChange}
+                    value={password}
+                    required
+                />
+                <FormInput
+                    label='Confirm Password'
+                    type='password'
+                    name='confirmPassword'
+                    onChange={handleChange}
+                    value={confirmPassword}
+                    required
+                />
                 <button type='submit'>Sign Up</button>
             </form>
         </div>
