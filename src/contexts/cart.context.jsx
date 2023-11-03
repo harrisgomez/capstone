@@ -37,7 +37,7 @@ const clearCartItem = (cartItems, cartItemToClear) => cartItems.filter(cartItem 
 export const CartContext = createContext({
     isCartContext: false,
     setIsCartOpen: () => { },
-    cartItem: [],
+    cartItems: [],
     addItemToCart: () => { },
     removeItemFromCart: () => { },
     clearItemsFromCart: () => { },
