@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 
 // Business logic should not be handled in reducer
 // payload should already contain the data you want updated
-export const userReducer = (state = INITIAL_STATE, action) => {
+export const userReducer = (state = INITIAL_STATE, action = {}) => {
     const { type, payload } = action;
 
     switch (type) {
