@@ -1,10 +1,22 @@
 import { compose, createStore, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 
 import { rootReducer } from './root-reducer';
 
+const loggerMiddleware = store => next => action => {
+    if (!action.type) {
+        return next(action);
+    }
+
+    console.log('type', action.type);
+    console.log('payload', action.payload);
+    console.log('currentState', store.getState());
+
+    next(action);
+}
+
 // middlwares 'enhance' the store by catching actions before they hit the store
-const middleWares = [logger];
+const middleWares = [loggerMiddleware];
 
 // each middleware has to be called in order to work
 const composedEnhancers = compose(applyMiddleware(...middleWares));
