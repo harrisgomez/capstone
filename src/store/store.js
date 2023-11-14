@@ -14,7 +14,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // middlwares 'enhance' the store by catching actions before they hit the store
-const middleWares = [process.env.NODE_ENV !== 'production' && logger.filter(Boolean)];
+const middleWares = [process.env.NODE_ENV !== 'production' && logger].filter(Boolean);
 
 // This condition uses an enhanced devtools compose if we're not in production, there is a windows object, and devtools (chrome) exists
 const composeEnhancer = (process.env.NODE_ENV !== 'production'
