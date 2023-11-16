@@ -85,7 +85,7 @@ export const createUserDocFromAuth = async (userAuth, additionalInformation = {}
         }
     }
 
-    return userDocRef;
+    return userSnapshot;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
